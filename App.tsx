@@ -9,6 +9,7 @@ import {
 } from "@expo-google-fonts/roboto";
 
 import { THEME } from "./src/styles/theme";
+import { Home } from "./src/screens/Home";
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -23,7 +24,8 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontLoaded ? <SignIn /> : <Loading />}
+      {/* {fontLoaded ? <SignIn /> : <Loading />} */}
+      {fontLoaded ? <Home /> : <Loading />}
     </NativeBaseProvider>
   );
 }
