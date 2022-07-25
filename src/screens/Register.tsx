@@ -16,7 +16,6 @@ export default function Register() {
         flex={1}
         mt={5}
         multiline
-        textAlign="top"
       />
       <Button title="Cadastrar" mt={5} />
     </VStack>
