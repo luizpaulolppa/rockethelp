@@ -1,7 +1,7 @@
 import React from "react";
 import { NativeBaseProvider, StatusBar } from "native-base";
 import SignIn from "./src/screens/SignIn";
-import Loading from "./src/components/Loading";
+import { Loading } from "./src/components/Loading";
 import {
   useFonts,
   Roboto_400Regular,
@@ -9,7 +9,7 @@ import {
 } from "@expo-google-fonts/roboto";
 
 import { THEME } from "./src/styles/theme";
-import { Home } from "./src/screens/Home";
+import Register from "./src/screens/Register";
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -24,8 +24,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {/* {fontLoaded ? <SignIn /> : <Loading />} */}
-      {fontLoaded ? <Home /> : <Loading />}
+      {fontLoaded ? <Register /> : <Loading />}
     </NativeBaseProvider>
   );
 }

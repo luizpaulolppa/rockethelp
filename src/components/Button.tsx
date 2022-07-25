@@ -4,7 +4,7 @@ type Props = IButtonProps & {
   title: string;
 };
 
-export default function Button({ title, ...rest }: Props) {
+export function Button({ title, ...rest }: Props) {
   return (
     <NBButton
       bg="green.700"

@@ -12,7 +12,7 @@ import { SignOut, ChatTeardropText } from "phosphor-react-native";
 import { useState } from "react";
 
 import Logo from "../assets/logo_secondary.svg";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import { Filter } from "../components/Filter";
 import { Order, OrderProps } from "../components/Order";
 
