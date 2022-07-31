@@ -16,19 +16,15 @@ import Logo from "../assets/logo_secondary.svg";
 import { Button } from "../components/Button";
 import { Filter } from "../components/Filter";
 import { Order, OrderProps } from "../components/Order";
+import ordersMock from "../mocks/orders.json";
 
 type StatusSelected = "open" | "closed";
 
 export function Home() {
   const [statusSelected, setStatusSelected] = useState<StatusSelected>("open");
-  const [orders, setOrders] = useState<OrderProps[]>([
-    {
-      id: "123",
-      patrimony: "123456",
-      status: "open",
-      when: "18/07/2022 às 14:00",
-    },
-  ]);
+  const [orders, setOrders] = useState<OrderProps[]>(
+    ordersMock as OrderProps[]
+  );
 
   const navigation = useNavigation();
   const { colors } = useTheme();
@@ -63,8 +59,8 @@ export function Home() {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Heading color="gray.100">Meus chamados</Heading>
-          <Text color="gray.200">3</Text>
+          <Heading color="gray.100">Solicitações</Heading>
+          <Text color="gray.200">{orders.length}</Text>
         </HStack>
         <HStack space={3} mb={8}>
           <Filter
@@ -81,7 +77,7 @@ export function Home() {
           />
         </HStack>
         <FlatList
-          data={orders}
+          data={orders.filter((order) => order.status === statusSelected)}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <Order data={item} onPress={() => handleOpenDetails(item.id)} />
