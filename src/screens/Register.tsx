@@ -3,7 +3,7 @@ import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 
-export default function Register() {
+export function Register() {
   return (
     <VStack flex={1} p={6} bg="gray.600">
       <Header title="Nova solicitação" />
