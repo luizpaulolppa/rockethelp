@@ -16,11 +16,5 @@
     "patrimony": "123456",
     "status": "open",
     "when": "18/07/2022 às 14:00"
-  },
-  {
-    "id": "123456",
-    "patrimony": "123456",
-    "status": "closed",
-    "when": "18/07/2022 às 14:00"
   }
 ]

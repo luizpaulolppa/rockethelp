@@ -60,7 +60,9 @@ export function Home() {
           alignItems="center"
         >
           <Heading color="gray.100">Solicitações</Heading>
-          <Text color="gray.200">{orders.length}</Text>
+          <Text color="gray.200">
+            {orders.filter((order) => order.status === statusSelected).length}
+          </Text>
         </HStack>
         <HStack space={3} mb={8}>
           <Filter
